@@ -1,0 +1,62 @@
+{
+  "title": "Harun UI Studio: skill review",
+  "status": "READY FOR REVIEW",
+  "app_url": null,
+  "data_mode": "Skill documentation and local report utility. No product backend or live product data.",
+  "summary": "A personal UI/UX and frontend skill that prioritizes existing components, architecture, styles, typography, and integrations. Conditional references keep the initial context small.",
+  "changes": [
+    {"path": "harun-ui-studio/SKILL.md", "change": "Added the compact workflow, reuse-first rules, frontend-only boundary, retention policy, and explicit Git authorization boundary."},
+    {"path": "harun-ui-studio/references/workflow.md", "change": "Added codebase inspection, reuse mapping, architecture preservation, craft standards, grammar/casing guidance, and bounded verification."},
+    {"path": "harun-ui-studio/references/skill-routing.md", "change": "Added conditional routing for the requested design skills and relevant ECC frontend skills. Existing project conventions override borrowed defaults."},
+    {"path": "harun-ui-studio/references/integration.md", "change": "Added existing-client reuse, deterministic frontend fixtures, production-off behavior, and a field-level backend handoff contract."},
+    {"path": "harun-ui-studio/references/delivery.md", "change": "Added seven required delivery fields, actual-app preview rules, current evidence, URL verification, lifetime, restart, and explicit cleanup instructions."},
+    {"path": "harun-ui-studio/scripts/artifact.py", "change": "Added an optional Python standard-library report generator, loopback-only report server, and manifest/hash-checked cleanup. The report does not reimplement application UI."},
+    {"path": "harun-ui-studio/tests/test_artifact.py", "change": "Added runnable tests for report escaping, links, screenshot copying, unavailable previews, ownership, path boundaries, and cleanup retention."},
+    {"path": "README.md", "change": "Added Indonesian activation instructions, complete execution/access flow, skill inventory, restart command, and cleanup usage."},
+    {"path": "WORKLOG.md and TEST-REPORT.md", "change": "Recorded the design, baseline failure evidence, five pressure cases, five guided wording samples with controls, test results, and evaluation limitations."},
+    {"path": "review-report.json", "change": "Added the source data for this review artifact. The generated report and ownership manifest remain separate from the skill implementation."}
+  ],
+  "flows": [
+    {
+      "name": "Use the skill in a frontend project",
+      "precondition": "The skill is installed in ~/.config/opencode/skills/harun-ui-studio. Open the actual frontend project in OpenCode; start a new session if the catalog is stale.",
+      "steps": ["Invoke /harun-ui-studio if shown in the skill menu, or ask: Gunakan skill harun-ui-studio untuk merapikan halaman Orders.", "Provide the page or desired change. The agent inspects existing components, tokens, routes, and frontend integration before edits.", "Review the delivered application link, artifact, numbered access flow, per-file changes, verification, and backend handoff."],
+      "expected": "Existing implementation patterns are preserved. Missing providers use explicit frontend fixtures. Backend work and automatic Git writes are excluded."
+    },
+    {
+      "name": "Inspect this skill artifact",
+      "precondition": "The local report server is running on the same computer at http://127.0.0.1:8765/.",
+      "steps": ["Open http://127.0.0.1:8765/.", "Read Changes, Verification, and Limitations. This report reviews a skill; no product application existed in the workspace.", "Open README.md for usage and TEST-REPORT.md for the evaluation evidence."],
+      "expected": "The report accurately separates completed checks from untested model parity and future application behavior."
+    },
+    {
+      "name": "Restart the report",
+      "precondition": "Run the command from /home/harunbahrudin/Downloads/skill/design-skill with Python 3 available and port 8765 free.",
+      "steps": ["Run: python3 harun-ui-studio/scripts/artifact.py serve --base .ui-artifacts --id skill-review --port 8765", "Open the exact URL printed by the server. If the port is occupied, use another free port and open the printed URL."],
+      "expected": "The saved report becomes reachable again. It remains a local review surface, not a public deployment."
+    },
+    {
+      "name": "Remove only this artifact after review",
+      "precondition": "The user explicitly asks: Sudah, hapus artifact skill-review. A bare sudah bagus does not request deletion.",
+      "steps": ["Verify the task-owned report process and artifact ID; stop only that report process.", "Run: python3 harun-ui-studio/scripts/artifact.py clean --base .ui-artifacts --id skill-review --confirm skill-review", "If modified or unknown files are reported, inspect them rather than forcing removal."],
+      "expected": "Only unchanged files owned by skill-review are removed. Skill files, frontend source, other artifacts, documentation, and shared application servers remain."
+    }
+  ],
+  "checks": [
+    {"name": "Artifact utility", "status": "PASS", "evidence": "python3 -m unittest discover -s harun-ui-studio/tests -v; 9 tests passed, exit 0, including screenshot copying and unavailable-preview behavior."},
+    {"name": "Pressure scenarios", "status": "PASS", "evidence": "Five simulated cases inspected manually: missing backend, existing-stack conflict, blocked verification, CSP/stale artifact, and cleanup/Git ambiguity. All respected the explicit boundaries and delivery structure."},
+    {"name": "Wording samples", "status": "PASS", "evidence": "Five fresh-context guided responses used all seven delivery fields. Five controls preserved explicit retention rules but omitted the complete output structure. This is a smoke test, not a causal model benchmark."},
+    {"name": "Cheap-versus-premium model parity", "status": "NOT RUN", "evidence": "No price-ranked model comparison was performed. The catalog did not provide pricing. The skill does not guarantee identical results across models."},
+    {"name": "Downstream product verification", "status": "NOT RUN", "evidence": "The initial workspace was empty. No product website was implemented or tested in this task."}
+  ],
+  "backend": "Not applicable to this skill-authoring task. The installed skill requires consumer field requirements, contract references, error states, fixture-to-real mapping, and backend ownership in future integration handoffs.",
+  "limitations": [
+    "Passing the listed checks does not prove universal perfection or identical output from every AI model.",
+    "The report has no product application link because this task creates a skill, not a product UI.",
+    "Local URLs work only while their local server runs. No public deployment or tunnel was created.",
+    "Behavioral evaluations are intended-action simulations, not end-to-end implementation runs across multiple model families.",
+    "Reference files load on demand; actual token counts depend on the model tokenizer and task.",
+    "Review does not authorize automatic commit, push, or cleanup."
+  ],
+  "screenshots": []
+}

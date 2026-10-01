@@ -1,0 +1,16 @@
+# Bytecode & Python caches
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Artifacts & Local test captures
+.ui-artifacts/
+.playwright-mcp/
+skill-review-mobile.png
+
+# OS & Editor
+.DS_Store
+*.swp
+*.swo
+.vscode/
+.idea/
